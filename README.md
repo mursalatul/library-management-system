@@ -1,6 +1,17 @@
-# Library Management System
 
-Welcome to the Library Management System! This system is designed to efficiently manage the operations of a library, including cataloging books, managing members, borrowing and returning books, and generating reports.
+<table border="0">
+  <tr>
+    <td width="35%">
+      <img src="https://github.com/mursalatul/library-management-system/assets/79168756/b94f4fda-a81c-49a2-b5dd-47033a9d4b39" height="300" width="300"></img>
+    </td>
+    <td>
+       <h1>Library Management System</h1>
+       <p>Welcome to the Library Management System! This system is designed to efficiently manage the operations of a library, including cataloging books, managing members, borrowing and returning books, and generating reports.</p>
+    </td>
+  </tr>
+</table>
+
+
 
 ## Features
 
