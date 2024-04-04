@@ -35,8 +35,8 @@ Welcome to the Library Management System! This system is designed to efficiently
 ## Contributing
 
 
-
 ## License
+<b>library-management-system</b> © 2024 by [Md Mursalatul Islam Pallob](https://github.com/mursalatul) is [licensed](https://github.com/mursalatul/library-management-system/blob/master/LICENSE) under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 
 
