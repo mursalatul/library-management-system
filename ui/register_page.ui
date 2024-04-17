@@ -200,6 +200,13 @@
       <height>14</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel:hover {
+    color: blue;
+    text-decoration: underline;
+}
+</string>
+    </property>
     <property name="text">
      <string>Login</string>
     </property>
