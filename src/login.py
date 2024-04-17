@@ -2,6 +2,9 @@ from PyQt5 import QtWidgets
 from PyQt5.uic import loadUi
 import sys
 
+# custom modules
+from src.register import Register
+
 class Login(QtWidgets.QMainWindow):
     """handle login feature
     """
@@ -16,6 +19,7 @@ class Login(QtWidgets.QMainWindow):
 
         # making label_or_register clickable
         self._makeRegisterLabelClickable()
+
     def _loadTheWidgets(self):
         """load all the input widgets in the login window
         """
@@ -30,11 +34,19 @@ class Login(QtWidgets.QMainWindow):
         self.label_or_register = self.findChild(QtWidgets.QLabel, 'label_or_register')
 
     def _makeRegisterLabelClickable(self):
+        """make the register button clickable
+        """
         self.label_or_register.mousePressEvent = self._registerLabelClicked
 
     def _registerLabelClicked(self, event):
         """Handle click event for the register label"""
-        print("Register label clicked!")
+        # hide the login window and show register
+        # Register(self): creating an object of Register window and giving the instance
+        # of the current login window so that when the work of register window is finished
+        # it can make the login window visible again.
+        r = Register(self)
+        self.hide()
+
 
     def user(self, username, password) -> None:
         self._username = username
