@@ -1,32 +1,28 @@
-# import psycopg2
-# def get_connection():
-# 	try:
-# 		return psycopg2.connect(
-# 			database="test1",
-# 			user="postgres",
-# 			password="1234",
-# 			host="localhost",
-# 			port=5432,
-# 		)
-# 	except:
-# 		return False
-# conn = get_connection()
-# print(conn)
-# cr = conn.cursor()
-# cr.execute("""INSERT INTO person (id, name, age)
-# VALUES
-#     (7, 'John', 30),
-#     (8, 'Emma', 25),
-#     (9, 'Michael', 40);
+import psycopg2
 
-# """)
-# conn.commit()
-# if conn:
-# 	print("Connection to the PostgreSQL established successfully.")
-# else:
-# 	print("Connection to the PostgreSQL encountered and error.")
+# from data.database_info import database_credentials # use it(with app)
+from database_info import database_credentials # delete it
+class Database:
+    def connect(self, database_credentials) -> str:
+        """connect to a particular database
 
-# conn.close()
+        Args:
+            database_credentials (dict): information about the database
 
-# # class Database:
-    
+        Returns:
+            str: 'connected' when successfully connected. else the error message
+        """
+        try:
+            self.conn = psycopg2.connect(database=database_credentials['database'], user=database_credentials['user'], password=database_credentials['password'], host=database_credentials['host'], port=database_credentials['port'])
+            return 'connected'
+        except Exception as e:
+            return str(e)
+
+    def isPresent(self, table_name):
+        """check if the needed databases present or not
+        """
+        pass
+
+
+d = Database()
+print(d.connect(database_credentials))
