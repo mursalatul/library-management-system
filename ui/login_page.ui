@@ -10,6 +10,9 @@
     <height>288</height>
    </rect>
   </property>
+  <property name="mouseTracking">
+   <bool>true</bool>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
@@ -139,6 +142,16 @@
       <width>47</width>
       <height>14</height>
      </rect>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel:hover {
+    color: blue;
+    text-decoration: underline;
+}
+</string>
     </property>
     <property name="text">
      <string>Register</string>
