@@ -2,7 +2,7 @@ from PyQt5 import QtWidgets
 from PyQt5.uic import loadUi
 import sys
 
-class Register(QtWidgets.QMainWindow):
+class RegisterUI(QtWidgets.QMainWindow):
     """handle register feature
     """
     def __init__(self, login_window) -> None:
@@ -10,7 +10,7 @@ class Register(QtWidgets.QMainWindow):
         self.login_window = login_window
 
         # load the register ui
-        super(Register, self).__init__()
+        super(RegisterUI, self).__init__()
         loadUi('ui\\register_page.ui', self)
         self.show()
 

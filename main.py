@@ -1,4 +1,4 @@
-from src.login import HandleLogin
+from ui.loginui import HandleLogin
 def main():
     # login window
     login = HandleLogin()

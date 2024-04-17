@@ -3,14 +3,14 @@ from PyQt5.uic import loadUi
 import sys
 
 # custom modules
-from src.register import Register
+from ui.registerui import Register
 
-class Login(QtWidgets.QMainWindow):
+class LoginUI(QtWidgets.QMainWindow):
     """handle login feature
     """
     def __init__(self) -> None:
         # load the login ui
-        super(Login, self).__init__()
+        super(LoginUI, self).__init__()
         loadUi('ui\login_page.ui', self)
         self.show()
 
