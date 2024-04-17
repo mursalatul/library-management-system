@@ -3,7 +3,7 @@ from PyQt5.uic import loadUi
 import sys
 
 # custom modules
-from ui.registerui import Register
+from src.ui.registerui import RegisterUI
 
 class LoginUI(QtWidgets.QMainWindow):
     """handle login feature
@@ -44,7 +44,7 @@ class LoginUI(QtWidgets.QMainWindow):
         # Register(self): creating an object of Register window and giving the instance
         # of the current login window so that when the work of register window is finished
         # it can make the login window visible again.
-        r = Register(self)
+        r = RegisterUI(self)
         self.hide()
 
 
@@ -55,5 +55,5 @@ class LoginUI(QtWidgets.QMainWindow):
 class HandleLogin:
     def __init__(self) -> None:
         app = QtWidgets.QApplication(sys.argv)
-        l = Login()
+        l = LoginUI()
         sys.exit(app.exec_())

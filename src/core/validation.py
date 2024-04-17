@@ -1,5 +1,5 @@
 class FormatVerify:
-    def varifyUsername(self, username: str) -> bool:
+    def varifyUsernameFormat(self, username: str) -> bool:
         """check username format
 
         Args:
@@ -14,7 +14,7 @@ class FormatVerify:
                 return False
         return True
     
-    def verifyName(self, name: str) -> bool:
+    def verifyNameFormat(self, name: str) -> bool:
         """checking if the name only contain string
 
         Args:
@@ -28,7 +28,7 @@ class FormatVerify:
                 return False
         return True
     
-    def verifyPassword(self, password: str) -> bool:
+    def verifyPasswordFormat(self, password: str) -> bool:
         big_letters, small_letters, numbers = 0
         password = password.strip()
 
@@ -48,5 +48,5 @@ class FormatVerify:
         
         if big_letters > 1 and small_letters > 1 and numbers > 1:
             return True
-        else
+        else:
             return False
