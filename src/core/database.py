@@ -18,11 +18,35 @@ class Database:
         except Exception as e:
             return str(e)
 
-    def isPresent(self, table_name):
-        """check if the needed databases present or not
+    def findUsernamePasswod(self, username, password):
+        """Load a specific table
         """
-        pass
+        try:
+            cursor = self.conn.cursor()
+            quary = """SELECT * FROM libraryid_username_password WHERE username = %s AND password = %s"""
+            cursor.execute(quary, (username, password))
+            result = cursor.fetchone()
+            cursor.close()
 
+            if result:
+                return "User found!"
+            else:
+                return "User not found or incorrect credentials."
+        except Exception as e:
+            return "Error: " + str(e)
+
+    # def createTable(self):
+    #     try:
+    #         curser = self.conn.cursor()
+    #         curser.execute('''CREATE TABLE test (
+    #                             name VARCHAR(255),
+    #                             number INT
+    #                         );''')
+    #         self.conn.commit()
+    #         curser.close()
+    #     except:
+    #         print("Not done")
 
 d = Database()
 print(d.connect(database_credentials))
+print(d.loadTable("pallob", "1234pal"))
