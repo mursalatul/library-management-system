@@ -1,7 +1,9 @@
 import psycopg2
 
 # from data.database_info import database_credentials # use it(with app)
-from database_info import database_credentials # delete it
+from database_info import database_credentials  # delete it
+
+
 class Database:
     def connect(self, database_credentials) -> str:
         """connect to a particular database
@@ -13,13 +15,25 @@ class Database:
             str: 'connected' when successfully connected. else the error message
         """
         try:
-            self.conn = psycopg2.connect(database=database_credentials['database'], user=database_credentials['user'], password=database_credentials['password'], host=database_credentials['host'], port=database_credentials['port'])
-            return 'connected'
+            self.conn = psycopg2.connect(
+                database=database_credentials["database"],
+                user=database_credentials["user"],
+                password=database_credentials["password"],
+                host=database_credentials["host"],
+                port=database_credentials["port"],
+            )
+            return "connected"
         except Exception as e:
             return str(e)
 
-    def findUsernamePasswod(self, username, password):
-        """Load a specific table
+    def isAExistingUsernamePasswod(self, username: str, password: str) -> bool:
+        """THIS METHOD IS SPECIFICALLY WRITTEN FOR FIND EXISTING USERNAME AND PASSWORD COMBO
+        find username & password combo.
+        Args:
+            username (str)
+            password (str)
+        Returns:
+            bool: True if the username and password is found, else return False
         """
         try:
             cursor = self.conn.cursor()
@@ -29,11 +43,14 @@ class Database:
             cursor.close()
 
             if result:
-                return "User found!"
+                # username password combo found
+                return True
             else:
-                return "User not found or incorrect credentials."
+                # username password combo not found
+                return False
         except Exception as e:
-            return "Error: " + str(e)
+            # return False if exception occure
+            return False
 
     # def createTable(self):
     #     try:
@@ -46,6 +63,7 @@ class Database:
     #         curser.close()
     #     except:
     #         print("Not done")
+
 
 d = Database()
 print(d.connect(database_credentials))
