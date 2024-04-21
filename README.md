@@ -35,7 +35,7 @@
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your_username/library-management-system.git`
+1. Clone the repository: `https://github.com/mursalatul/library-management-system.git`
 
 
 
