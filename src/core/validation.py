@@ -36,7 +36,7 @@ class FormatVerify:
         if len(password) == 0:
             return False
         
-        big_letters, small_letters, numbers = 0, 0, 0
+        big_letters, small_letters, numbers, spacial_char = 0, 0, 0, 0
         password = password.strip()
 
         # return false if password contain inner space
@@ -45,15 +45,18 @@ class FormatVerify:
 
         # getting the indivituals 
         for character in list(password):
+            print(character)
             if character.isalpha():
                 if character.isupper():
                     big_letters += 1
                 else:
                     small_letters += 1
-            else:
+            elif character.isdigit():
                 numbers += 1
+            else:
+                spacial_char += 1
         
-        if big_letters > 1 and small_letters > 1 and numbers > 1:
+        if big_letters > 0 and small_letters > 0 and numbers > 0 and spacial_char > 0:
             return True
         else:
             return False
