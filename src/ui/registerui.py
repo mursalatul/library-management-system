@@ -2,6 +2,8 @@ from PyQt5 import QtWidgets
 from PyQt5.uic import loadUi
 import sys
 
+from src.core.register import Register
+
 class RegisterUI(QtWidgets.QMainWindow):
     """handle register feature
     """
@@ -20,6 +22,9 @@ class RegisterUI(QtWidgets.QMainWindow):
         # making label_or_register clickable
         self._makeLoginLabelClickable()
 
+        # trigger login button
+        self.pushButton_register.clicked.connect(self._registerButtonClicked)
+
     def _loadTheWidgets(self):
         """load all the input widgets in the login window
         """
@@ -34,8 +39,8 @@ class RegisterUI(QtWidgets.QMainWindow):
         self.lineEdit_libraryid = self.findChild(QtWidgets.QLineEdit, 'lineEdit_libraryid')
         # password
         self.lineEdit_password = self.findChild(QtWidgets.QLineEdit, 'lineEdit_password')
-
-        # lastname
+        # register button
+        self.pushButton_register = self.findChild(QtWidgets.QPushButton, 'pushButton_register')
 
     def _makeLoginLabelClickable(self):
         """make the login label in register window clickable
@@ -49,3 +54,21 @@ class RegisterUI(QtWidgets.QMainWindow):
         
         # close register window
         self.close()
+
+    def _registerButtonClicked(self):
+        """this method will handle all operation suppose to execute after
+        click the register button"""
+        handle_register = Register(
+            firstname=self.lineEdit_firstname,
+            lastname=self.lineEdit_lastname,
+            username=self.lineEdit_username,
+            libraryid=self.lineEdit_libraryid,
+            password=self.lineEdit_password
+        )
+    
+    def _border(self, element, status: bool):
+        """Set and remove border from an element"""
+        if status:
+            element.setStyleSheet("")
+        else:
+            element.setStyleSheet("border: 2px solid red;")
