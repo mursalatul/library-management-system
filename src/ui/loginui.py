@@ -5,6 +5,7 @@ import sys
 # custom modules
 from src.ui.registerui import RegisterUI
 from src.core.login import Login
+from src.ui.popupui import MessageBox
 
 
 class LoginUI(QtWidgets.QMainWindow):
@@ -60,6 +61,9 @@ class LoginUI(QtWidgets.QMainWindow):
         login_handler = Login(
             self.lineEdit_username.text(), self.lineEdit_password.text()
         )
+
+        # creating MessageBox object to show relavent message
+        popup_msg = MessageBox()
         # checking the format
         # indicating the wrong field using red border
         self._border(self.lineEdit_username, login_handler.usernameOk)
@@ -68,10 +72,19 @@ class LoginUI(QtWidgets.QMainWindow):
         # if the format of username and password both well formatted
         if login_handler.isGoodFormated():
             pass
+        else:
+            # show error message pop up box
+            if not login_handler.usernameOk:
+                popup_msg.showMessage(
+                    "Username must not contain any spacial character like @*^# or space. It can only contail underscore, letters, and numbers!"
+                )
+            else:
+                popup_msg.showMessage(
+                    "Password must not contain any space. It should have a uppercase and lowercase letter, one number and a special character.!"
+                )
 
     def _border(self, element, status: bool):
-        """Set and remove border from an element
-        """
+        """Set and remove border from an element"""
         if status:
             element.setStyleSheet("")
         else:
