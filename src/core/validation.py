@@ -9,11 +9,13 @@ class FormatVerify:
             bool: True if it is a proper alpha numeric, else False
         """
         # return False if the string is not alpha numeric or underscore
+        if len(username) == 0:
+            return False 
         for character in list(username.strip()):
-            if not character.isalnum() and character == '_':
+            if not character.isalnum() and not character == '_':
                 return False
         return True
-    
+
     def verifyNameFormat(self, name: str) -> bool:
         """checking if the name only contain string
 
@@ -23,13 +25,18 @@ class FormatVerify:
         Returns:
             bool: True if it cantain only string, else False
         """
+        if len(name) == 0:
+            return False
         for character in list(name.strip()):
             if not character.isalpha():
                 return False
         return True
     
     def verifyPasswordFormat(self, password: str) -> bool:
-        big_letters, small_letters, numbers = 0
+        if len(password) == 0:
+            return False
+        
+        big_letters, small_letters, numbers = 0, 0, 0
         password = password.strip()
 
         # return false if password contain inner space
