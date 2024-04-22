@@ -27,31 +27,18 @@
 
 ## Technologies Used
 
-- **Programming Language**: our lovely python
+- **Main Programming Language**: [python]
   
-- **Database**: [net yet]
+- **Database**: [postgresqt]
 
-- **Frameworks/Libraries**: [pyqt]
+- **User Interface**: [pyqt5]
 
-## Installation
-
-1. Clone the repository: `https://github.com/mursalatul/library-management-system.git`
-
-
-
-## Usage
-
-
+and others!
 
 ## Contributing
-
+Read the [Contribution Guildline](https://github.com/mursalatul/library-management-system/blob/master/CONTRIBUTE.md) before contributing in the project.
+We need genious mind like you.
 
 ## License
 <b>library-management-system</b> © 2024 by [Md Mursalatul Islam Pallob](https://github.com/mursalatul) is [licensed](https://github.com/mursalatul/library-management-system/blob/master/LICENSE) under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-
-
-
-## Acknowledgements
-
-
 
