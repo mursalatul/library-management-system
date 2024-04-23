@@ -5,6 +5,9 @@ from data.database_info import database_credentials # use it(with app)
 
 
 class Database:
+    def __init__(self) -> None:
+        self.connect(database_credentials=database_credentials)
+
     def connect(self, database_credentials) -> str:
         """connect to a particular database
 
@@ -50,6 +53,7 @@ class Database:
                 return False
         except Exception as e:
             # return False if exception occure
+            print(str(e))
             return False
 
     # def createTable(self):
@@ -67,6 +71,6 @@ class Database:
 
 
 # d = Database()
-# print(d.connect(database_credentials))
-# print(d.isUsernamePasswodPresent("pallob", "Palob@1"))
+# # print(d.connect(database_credentials))
+# print(d.isUsernamePasswodPresent("pallob", "Pallob@1"))
 # # d.createTable()
