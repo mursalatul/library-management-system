@@ -45,7 +45,6 @@ class FormatVerify:
 
         # getting the indivituals 
         for character in list(password):
-            print(character)
             if character.isalpha():
                 if character.isupper():
                     big_letters += 1

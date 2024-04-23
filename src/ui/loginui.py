@@ -59,40 +59,8 @@ class LoginUI(QtWidgets.QMainWindow):
 
     def _loginButtonClicked(self):
         login_handler = Login(
-            self.lineEdit_username.text(), self.lineEdit_password.text()
+            self.lineEdit_username, self.lineEdit_password
         )
-
-        # creating MessageBox object to show relavent message
-        popup_msg = MessageBox()
-        # checking the format
-        # indicating the wrong field using red border
-        self._border(self.lineEdit_username, login_handler.usernameOk)
-        self._border(self.lineEdit_password, login_handler.passowordOk)
-
-        # if the format of username and password both well formatted
-        if login_handler.isGoodFormated():
-            pass
-        else:
-            # show error message pop up box
-            if not login_handler.usernameOk:
-                popup_msg.showMessage(
-                    "Username must not contain any spacial character like @*^# or space. It can only contail underscore, letters, and numbers!"
-                )
-            else:
-                popup_msg.showMessage(
-                    "Password must not contain any space. It should have a uppercase and lowercase letter, one number and a special character.!"
-                )
-
-    def _border(self, element, status: bool):
-        """Set and remove border from an element"""
-        if status:
-            element.setStyleSheet("")
-        else:
-            element.setStyleSheet("border: 2px solid red;")
-
-    def user(self, username, password) -> None:
-        self._username = username
-        self._password = password
 
 
 class HandleLogin:
