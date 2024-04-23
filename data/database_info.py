@@ -1,5 +1,5 @@
 database_credentials = {
-    'database' : "test1",
+    'database' : "elibrary",
 	'user' : "postgres",
 	'password' : "1234",
 	'host' : "localhost",

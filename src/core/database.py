@@ -1,7 +1,7 @@
 import psycopg2
 
-# from data.database_info import database_credentials # use it(with app)
-from database_info import database_credentials  # delete it
+from data.database_info import database_credentials # use it(with app)
+# from database_info import database_credentials  # delete it
 
 
 class Database:
@@ -26,7 +26,7 @@ class Database:
         except Exception as e:
             return str(e)
 
-    def isAExistingUsernamePasswod(self, username: str, password: str) -> bool:
+    def isUsernamePasswodPresent(self, username: str, password: str) -> bool:
         """THIS METHOD IS SPECIFICALLY WRITTEN FOR FIND EXISTING USERNAME AND PASSWORD COMBO
         find username & password combo.
         Args:
@@ -37,7 +37,7 @@ class Database:
         """
         try:
             cursor = self.conn.cursor()
-            quary = """SELECT * FROM libraryid_username_password WHERE username = %s AND password = %s"""
+            quary = """SELECT * FROM login WHERE username = %s AND password = %s"""
             cursor.execute(quary, (username, password))
             result = cursor.fetchone()
             cursor.close()
@@ -55,9 +55,10 @@ class Database:
     # def createTable(self):
     #     try:
     #         curser = self.conn.cursor()
-    #         curser.execute('''CREATE TABLE test (
-    #                             name VARCHAR(255),
-    #                             number INT
+    #         curser.execute('''CREATE TABLE login (
+    #                             libraryid VARCHAR(20) PRIMARY KEY,
+    #                             username VARCHAR(20),
+    #                             password VARCHAR(20)
     #                         );''')
     #         self.conn.commit()
     #         curser.close()
@@ -65,6 +66,7 @@ class Database:
     #         print("Not done")
 
 
-d = Database()
-print(d.connect(database_credentials))
-print(d.loadTable("pallob", "1234pal"))
+# d = Database()
+# print(d.connect(database_credentials))
+# print(d.isUsernamePasswodPresent("pallob", "Palob@1"))
+# # d.createTable()
