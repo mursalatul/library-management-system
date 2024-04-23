@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>283</width>
-    <height>349</height>
+    <width>351</width>
+    <height>395</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -119,7 +119,7 @@
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>240</y>
+      <y>280</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -131,7 +131,7 @@
    <widget class="QLineEdit" name="lineEdit_firstname">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>160</x>
       <y>90</y>
       <width>113</width>
       <height>20</height>
@@ -141,7 +141,7 @@
    <widget class="QLineEdit" name="lineEdit_lastname">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>160</x>
       <y>120</y>
       <width>113</width>
       <height>20</height>
@@ -151,7 +151,7 @@
    <widget class="QLineEdit" name="lineEdit_username">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>160</x>
       <y>150</y>
       <width>113</width>
       <height>20</height>
@@ -161,7 +161,7 @@
    <widget class="QLineEdit" name="lineEdit_libraryid">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>160</x>
       <y>180</y>
       <width>113</width>
       <height>20</height>
@@ -171,7 +171,7 @@
    <widget class="QLineEdit" name="lineEdit_password">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>160</x>
       <y>210</y>
       <width>113</width>
       <height>20</height>
@@ -182,7 +182,7 @@
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>270</y>
+      <y>310</y>
       <width>131</width>
       <height>16</height>
      </rect>
@@ -195,7 +195,7 @@
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>290</y>
+      <y>330</y>
       <width>47</width>
       <height>14</height>
      </rect>
@@ -211,13 +211,36 @@
      <string>Login</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>240</y>
+      <width>121</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>re-type Password Again</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_password_retype">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>240</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>283</width>
+     <width>351</width>
      <height>22</height>
     </rect>
    </property>
