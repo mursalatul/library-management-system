@@ -1,6 +1,7 @@
 import psycopg2
 
-from data.database_info import database_credentials # use it(with app)
+from data.database_info import database_credentials  # use it(with app)
+
 # from database_info import database_credentials  # delete it
 
 
@@ -42,6 +43,25 @@ class Database:
             cursor = self.conn.cursor()
             quary = """SELECT * FROM login WHERE username = %s AND password = %s"""
             cursor.execute(quary, (username, password))
+            result = cursor.fetchone()
+            cursor.close()
+
+            if result:
+                # username password combo found
+                return True
+            else:
+                # username password combo not found
+                return False
+        except Exception as e:
+            # return False if exception occure
+            print(str(e))
+            return False
+
+    def isDataPresent(self, table_name: str, column_name: str, data: str):
+        try:
+            cursor = self.conn.cursor()
+            query = f"SELECT * FROM {table_name} WHERE {column_name} = %s"
+            cursor.execute(query, (data,))
             result = cursor.fetchone()
             cursor.close()
 

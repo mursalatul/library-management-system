@@ -39,6 +39,8 @@ class RegisterUI(QtWidgets.QMainWindow):
         self.lineEdit_libraryid = self.findChild(QtWidgets.QLineEdit, 'lineEdit_libraryid')
         # password
         self.lineEdit_password = self.findChild(QtWidgets.QLineEdit, 'lineEdit_password')
+        # retyped password
+        self.lineEdit_retyped_passwod = self.findChild(QtWidgets.QLineEdit, 'lineEdit_password_retype')
         # register button
         self.pushButton_register = self.findChild(QtWidgets.QPushButton, 'pushButton_register')
 
@@ -63,7 +65,8 @@ class RegisterUI(QtWidgets.QMainWindow):
             lastname=self.lineEdit_lastname,
             username=self.lineEdit_username,
             libraryid=self.lineEdit_libraryid,
-            password=self.lineEdit_password
+            password=self.lineEdit_password,
+            retyped_password=self.lineEdit_retyped_passwod
         )
     
     def _border(self, element, status: bool):

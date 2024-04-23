@@ -21,7 +21,7 @@ class Login:
         self._markBorder()  # border will be marked only if there is a wrong formatted username or/and password
 
         # check in the database if username and password well formatted
-        if self.login_data_status["username"] and self.login_data_status["password"]:
+        if self._isGoodFormated():
             self._checkDataInDatabase()
 
     def _checkDataInDatabase(self):
@@ -53,8 +53,8 @@ class Login:
             self.login_data["password"].text()
         )
 
-    def isGoodFormated(self):
-        return self.usernameOk and self.passowordOk
+    def _isGoodFormated(self):
+        return self.login_data_status["username"] and self.login_data_status["password"]
 
     def _markBorder(self):
         for key, status in self.login_data_status.items():
