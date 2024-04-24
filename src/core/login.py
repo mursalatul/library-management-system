@@ -32,7 +32,6 @@ class Login:
         status = db.isUsernamePasswodPresent(
             self.login_data["username"].text(), self.login_data["password"].text()
         )
-        print(status)
         self.login_data_status["username"] = status
         self.login_data_status["password"] = status
 

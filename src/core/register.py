@@ -52,9 +52,8 @@ class Register:
                 # show done message
                 self._showAMessage(Message["register"]["status"])
 
-
     def _existingDataFound(self):
-        """"show message for existing data found and mark the box"""
+        """ "show message for existing data found and mark the box"""
         msg_box = MessageBox()
         if not self.registerDataStatus["libraryid"]:
             msg_box.showMessage(Message["register"]["existing_data"]["libraryid"])
@@ -65,7 +64,6 @@ class Register:
         self._markABox("libraryid", self.registerDataStatus["libraryid"])
         # mark the username box
         self._markABox("username", self.registerDataStatus["username"])
-
 
     def _checkDataInDatabase(self):
         db = Database()
@@ -82,7 +80,10 @@ class Register:
             column_name="username",
             data=self.registerData["username"].text(),
         )
-        if not self.registerDataStatus["libraryid"] or not self.registerDataStatus["username"]:
+        if (
+            not self.registerDataStatus["libraryid"]
+            or not self.registerDataStatus["username"]
+        ):
             # show message and mark box
             self._existingDataFound()
         else:
@@ -128,27 +129,49 @@ class Register:
         self.registerDataStatus["libraryid"] = True
 
     def _markBorder(self):
+        """if name/password format error message already showed
+        then dont need to show it again. this variables will
+        track it.
+        """
+        number_of_name_message_showed, number_of_password_message_showed = 0, 0
         for key, status in self.registerDataStatus.items():
             if status:
                 self.registerData[key].setStyleSheet("")
             else:
                 self.registerData[key].setStyleSheet("border: 2px solid red;")
+                
+                # for firstname and lastname
                 if key == "firstname" or key == "lastname":
-                    key = "name"
-                elif key == "retyped_password":
-                    key = "password"
-                self._showWrongFormatPopupMessage(key)
+
+                    # when already a message for name is not showed
+                    if number_of_name_message_showed < 1:
+                        key = "name"
+                        number_of_name_message_showed += 1
+                        self._showWrongFormatPopupMessage(key)
+
+                #  for password and retyped password
+                elif key == "retyped_password" or key == "password":
+
+                    # when already a message for password is not showd
+                    if number_of_password_message_showed < 1:
+                        key = "password"
+                        number_of_password_message_showed += 1
+                        self._showWrongFormatPopupMessage(key)
+                
+                # for everything else
+                else:
+                    self._showWrongFormatPopupMessage(key)
 
     def _showWrongFormatPopupMessage(self, element_name):
         msg_box = MessageBox()
         msg_box.showMessage(Message["register"]["format_message"][element_name])
-    
+
     def _markABox(self, element, status):
         if status:
             self.registerData[element].setStyleSheet("")
         else:
             self.registerData[element].setStyleSheet("border: 2px solid red;")
-    
+
     def _showAMessage(self, msg):
         msg_box = MessageBox()
         msg_box.showMessage(msg)
