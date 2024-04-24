@@ -47,10 +47,22 @@ class Register:
 
         if self._isGoodFormated():
             self._checkDataInDatabase()
+            # _checkDataInDatabase will set the value of readyForRegister
             if self.readyForRegister:
                 # store the register information
+                self._storeUserInfo()
                 # show done message
                 self._showAMessage(Message["register"]["status"])
+
+    def _storeUserInfo(self):
+        """store user information to user_info_basic table"""
+        db = Database()
+        # saving to user_info_basic table
+        db.insertData("user_info_basic", ["libraryid", "firstname", "lastname", "username"], [self.registerData["libraryid"].text(), self.registerData["firstname"].text(), self.registerData["lastname"].text(), self.registerData["username"].text()])
+
+        # saving to login table
+        db.insertData("login", ["libraryid", "username", "password"], [self.registerData["libraryid"].text(), self.registerData["username"].text(), self.registerData["password"].text()])
+
 
     def _existingDataFound(self):
         """ "show message for existing data found and mark the box"""
@@ -139,7 +151,7 @@ class Register:
                 self.registerData[key].setStyleSheet("")
             else:
                 self.registerData[key].setStyleSheet("border: 2px solid red;")
-                
+
                 # for firstname and lastname
                 if key == "firstname" or key == "lastname":
 
@@ -157,7 +169,7 @@ class Register:
                         key = "password"
                         number_of_password_message_showed += 1
                         self._showWrongFormatPopupMessage(key)
-                
+
                 # for everything else
                 else:
                     self._showWrongFormatPopupMessage(key)

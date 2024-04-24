@@ -75,14 +75,39 @@ class Database:
             # return False if exception occure
             print(str(e))
             return False
+    def insertData(self, table_name: str, columns: list, values: list):
+        try:
+            # number of columsn must be same as number of values
+            if len(columns) != len(values):
+                raise ValueError("column number and value number is not same.")
+            
+            cursor = self.conn.cursor()
+            query = f"INSERT INTO {table_name} ({', '.join(columns)}) VALUES ({', '.join(['%s']*len(values))})"
+
+            cursor.execute(query, values)
+            self.conn.commit()
+            return True
+        except Exception as e:
+            return str(e)
+
+    def deleteData(self, table_name: str, libraryid: str):
+        try:
+            cursor = self.conn.cursor()
+            query =  f"DELETE FROM {table_name} WHERE libraryid = %s"
+            cursor.execute(query, libraryid)
+            self.conn.commit()
+            return True
+        except Exception as e:
+            return str(e)
 
     # def createTable(self):
     #     try:
     #         curser = self.conn.cursor()
-    #         curser.execute('''CREATE TABLE login (
+    #         curser.execute('''CREATE TABLE user_info_basic (
     #                             libraryid VARCHAR(20) PRIMARY KEY,
-    #                             username VARCHAR(20),
-    #                             password VARCHAR(20)
+    #                             firstname VARCHAR(20),
+    #                             lastname VARCHAR(20),
+    #                             username VARCHAR(20)
     #                         );''')
     #         self.conn.commit()
     #         curser.close()
@@ -93,4 +118,6 @@ class Database:
 # d = Database()
 # # print(d.connect(database_credentials))
 # print(d.isUsernamePasswodPresent("pallob", "Pallob@1"))
-# # d.createTable()
+# d.createTable()
+# d.insertData("user_info_basic", ["libraryid", "firstname", "lastname", "username"], ["1", "a", "b", "c"])
+# d.deleteData("user_info_basic", '1')
