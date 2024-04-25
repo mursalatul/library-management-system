@@ -58,6 +58,15 @@ class Database:
             return False
 
     def isDataPresent(self, table_name: str, column_name: str, data: str):
+        """search for a data in a particular column in a particular table
+        Args:
+            table_name (str): name of the table where the data will be looked
+            column_name (str): targettad table
+            data (str): search object
+        Return:
+            True (bool): if the data found
+            False (bool): if the data is not found or exception happend
+        """
         try:
             cursor = self.conn.cursor()
             query = f"SELECT * FROM {table_name} WHERE {column_name} = %s"
@@ -75,7 +84,17 @@ class Database:
             # return False if exception occure
             print(str(e))
             return False
+        
     def insertData(self, table_name: str, columns: list, values: list):
+        """insert data in a table. must provide the list of colums and values in str
+        Args:
+            table_name (str): name of the table where data will be inserted
+            columns (list): list of the columns names
+            values (list): values for the columns
+        Return:
+            True (bool): if insertion complete
+            False (bool): if can not insert for any reason or exception happen
+        """
         try:
             # number of columsn must be same as number of values
             if len(columns) != len(values):
@@ -91,6 +110,14 @@ class Database:
             return str(e)
 
     def deleteData(self, table_name: str, libraryid: str):
+        """ delete data from a table by targetting library id
+        Args:
+            table_name (str): name of the table from where data will be removed
+            libraryid (str): deletion will be happend based of libraryid
+        Return:
+            True (bool): if deletion complete
+            False (bool): if cant found the library id or exception happen
+        """
         try:
             cursor = self.conn.cursor()
             query =  f"DELETE FROM {table_name} WHERE libraryid = %s"
