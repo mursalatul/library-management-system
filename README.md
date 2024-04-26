@@ -23,7 +23,6 @@
 
 - **Search and Filter**: Provide search and filtering functionality to help users find books based on various criteria such as title, author, genre, and availability.
 
-- **Reports**: Generate reports on various aspects of library operations, including book inventory, borrowing statistics, and overdue books.
 
 ## Technologies Used
 
