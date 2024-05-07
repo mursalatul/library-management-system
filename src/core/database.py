@@ -8,6 +8,40 @@ from data.database_info import database_credentials  # use it(with app)
 class Database:
     def __init__(self) -> None:
         self.connect(database_credentials=database_credentials)
+    
+    def readyDataBase(self):
+        """this method will create all the necessary database and table for this program to run currectly
+        database name: elibrary
+        tables: login(libraryid, username, password)
+                user_info_basic(libraryid, firstname, lastname, username)
+        """
+        try:
+            # store status if they are present in the database or not
+            database_found = False
+            login_table_found = False
+            user_info_basic_table_found = False
+
+            cursor = self.conn.cursor()
+            # checking if already the elibrary database present as a database or not
+            query = "SELECT 1 FROM pg_database WHERE datname = 'elibrary';"
+            cursor.execute(query)
+            result = cursor.fetchone()
+            if result:
+                database_found = True
+
+            # if database not found no need to search for the tables cause the are also not present
+            if database_found == False:
+                # creating database
+                query = "CREATE DATABASE elibrary;"
+                cursor.execute(query)
+                self.conn.commit()
+
+                # creating tables
+                self._createTable("login", "(libraryid VARCHAR(20) PRIMARY ID)")
+                cursor.close()
+        except Exception as e:
+            print("Erros in database.py/readyDatabase.py")
+            print(str(e))
 
     def connect(self, database_credentials) -> str:
         """connect to a particular database
@@ -55,6 +89,7 @@ class Database:
         except Exception as e:
             # return False if exception occure
             print(str(e))
+            print("ok")
             return False
 
     def isDataPresent(self, table_name: str, column_name: str, data: str):
@@ -127,19 +162,16 @@ class Database:
         except Exception as e:
             return str(e)
 
-    # def createTable(self):
-    #     try:
-    #         curser = self.conn.cursor()
-    #         curser.execute('''CREATE TABLE user_info_basic (
-    #                             libraryid VARCHAR(20) PRIMARY KEY,
-    #                             firstname VARCHAR(20),
-    #                             lastname VARCHAR(20),
-    #                             username VARCHAR(20)
-    #                         );''')
-    #         self.conn.commit()
-    #         curser.close()
-    #     except:
-    #         print("Not done")
+    def _createTable(self, table_name: str, columns: str):
+        try:
+            curser = self.conn.cursor()
+            query = "CREATE TABLE {table_name} "+columns+";"
+            curser.execute(query)
+            self.conn.commit()
+            curser.close()
+        except Exception as e:
+            print("error in database.py->_createTable()")
+            print(str(e))
 
 
 # d = Database()
