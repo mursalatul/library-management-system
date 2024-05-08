@@ -30,18 +30,18 @@ class Database:
                 database_found = True
 
             # if database not found no need to search for the tables cause the are also not present
-            if database_found == False:
-                # creating database
-                query = "CREATE DATABASE elibrary;"
-                cursor.execute(query)
-                self.conn.commit()
+        #     if database_found == False:
+        #         # creating database
+        #         query = "CREATE DATABASE elibrary;"
+        #         cursor.execute(query)
+        #         self.conn.commit()
 
-                # creating tables
-                self._createTable("login", "(libraryid VARCHAR(20) PRIMARY ID)")
-                cursor.close()
-        except Exception as e:
-            print("Erros in database.py/readyDatabase.py")
-            print(str(e))
+        #         # creating tables
+        #         self._createTable("login", "(libraryid VARCHAR(20) PRIMARY ID)")
+        #         cursor.close()
+        # except Exception as e:
+        #     print("Erros in database.py/readyDatabase.py")
+        #     print(str(e))
 
     def connect(self, database_credentials) -> str:
         """connect to a particular database

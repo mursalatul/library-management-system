@@ -1,0 +1,6 @@
+pages:
+1. loging
+2. register
+
+note:
+* 
