@@ -1,0 +1,7 @@
+I have tried to giva a basic structure, more is yet to refine 
+
+
+
+Currently working on admins two functionalities show users and show books 
+
+Thinking on which functionalities  could be add on user side 
