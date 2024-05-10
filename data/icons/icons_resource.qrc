@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>search.png</file>
+    <file>exit.png</file>
+    <file>book-stack.png</file>
+    <file>menu-bar.png</file>
+  </qresource>
+</RCC>

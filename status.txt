@@ -7,3 +7,4 @@ note:
 * table : 
     1. login (libraryid VARCHAR(20) PRIMARY KEY, username VARCHAR(20), password VARCHAR(20))
     2. user_info_basic (libraryid VARCHAR(20) PRIMARY KEY, firstname VARCHAR(20), lastname VARCHAR(20), username VARCHAR(20))
+    3. book (bookid, name, author, edition, stock)
