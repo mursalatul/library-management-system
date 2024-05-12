@@ -12,7 +12,9 @@ Welcome! We're glad you're interested in contributing to Library Management Syst
 
    Makesure you are using python verion 3.7 to 3.9. Upper python versions dont support
    pyqt5.
-5. Create a seperated branch `$ git checkout -b new_feature` and make your changes here.
+5. Install [postgresql](https://www.postgresql.org/download/) and import the [elibrary_database.sql](https://github.com/mursalatul/library-management-system/blob/master/elibrary_database.sql).In the database, we have added
+  the tables and some values which will help you to getting started.
+6. Create a seperated branch `$ git checkout -b new_feature` and make your changes here.
    After adding all your features marge it with master branch and create a pull request.
 
 ## Coding Style
