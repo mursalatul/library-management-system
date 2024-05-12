@@ -7,6 +7,7 @@ from src.ui.registerui import RegisterUI
 from src.core.login import Login
 from src.ui.popupui import MessageBox
 from src.core.admin import Admin
+from data.window_instance import windows
 
 
 class LoginUI(QtWidgets.QMainWindow):
@@ -16,6 +17,10 @@ class LoginUI(QtWidgets.QMainWindow):
         # load the login ui
         super(LoginUI, self).__init__()
         loadUi("ui\login_page.ui", self)
+        # store the window in window_intance.py for future 
+        windows["loginui"] = self
+        # window manipulation
+
         self.show()
 
         # load the fields
@@ -76,7 +81,14 @@ class LoginUI(QtWidgets.QMainWindow):
             )
         else:
             # login as admin
-            admin_handler = Admin(
+            """
+            we are storing the admin_handler(though we might dont need it)
+            cause after running this method the admin_handler will be 
+            removed from the memory and the AdminUI window also will be 
+            removed from the memory. to prevent this, we have make admin_handler
+            as a member variable
+            """
+            self.admin_handler = Admin(
                 self.lineEdit_username, self.lineEdit_password
             )
 

@@ -2,7 +2,8 @@ from src.core.validation import FormatVerify
 from data.Message_data import Message
 from src.ui.popupui import MessageBox
 from src.core.database import Database
-from src.ui.adminui import HandleAdminUI
+from src.ui.adminui import AdminUI
+from data.window_instance import windows
 
 from data.database_info import database_credentials
 
@@ -41,7 +42,9 @@ class Admin:
             self._showUsernamePasswordFoundStatusPopupMessage(Message["login"]["in_database"]["found"])
 
             # loading admin ui
-            a = HandleAdminUI()
+            self.admin_ui = AdminUI()
+            # hiding the login window
+            windows["loginui"].hide()
 
         else:
             # username and password not found
