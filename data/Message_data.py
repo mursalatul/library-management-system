@@ -1,7 +1,7 @@
 Message = {
     "login": {
         "format_message": {
-            "username": "Username must not contain any spacial character like @*^# or space. It can only contail underscore, letters, and numbers!",
+            "username": "Username can only contail underscore, lower case letters, and numbers!",
             "password": "Password must not contain any space. It should have a uppercase and lowercase letter, one number and a special character.!",
         },
         "in_database": {
@@ -12,7 +12,7 @@ Message = {
     "register": {
         "format_message": {
             "name": "Name should have only Letters!",
-            "username": "Username must not contain any spacial character like @*^# or space. It can only contail underscore, letters, and numbers!",
+            "username": "Username can only contail underscore, lower case letters, and numbers!",
             "password": "Password must not contain any space. It should have a uppercase and lowercase letter, one number and a special character.!",
             "libraryid": "User libraryid provided by the librarian.",
         },

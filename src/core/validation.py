@@ -12,7 +12,7 @@ class FormatVerify:
         if len(username) == 0:
             return False 
         for character in list(username.strip()):
-            if not character.isalnum() and not character == '_':
+            if not character.isalnum() and not character == '_' or character.isupper():
                 return False
         return True
 
