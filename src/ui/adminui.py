@@ -10,5 +10,11 @@ class AdminUI(QtWidgets.QMainWindow):
     def __init__(self) -> None:
         super(AdminUI, self).__init__()
         # load the admin page ui
-        loadUi("ui\admin.ui", self)
+        loadUi("ui\\admin.ui", self)
         self.show()
+
+class HandleAdminUI():
+    def __init__(self) -> None:
+        admin_ui_app = QtWidgets.QApplication(sys.argv)
+        a = AdminUI()
+        sys.exit(admin_ui_app.exec_())

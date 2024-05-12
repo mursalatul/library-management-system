@@ -6,6 +6,7 @@ import sys
 from src.ui.registerui import RegisterUI
 from src.core.login import Login
 from src.ui.popupui import MessageBox
+from src.core.admin import Admin
 
 
 class LoginUI(QtWidgets.QMainWindow):
@@ -44,6 +45,15 @@ class LoginUI(QtWidgets.QMainWindow):
         # getting register lable
         self.label_or_register = self.findChild(QtWidgets.QLabel, "label_or_register")
 
+        # getting radio buttons
+        self.radioButton_student = self.findChild(
+            QtWidgets.QRadioButton, "radioButton_student"
+        )
+
+        self.radioButton_admin = self.findChild(
+            QtWidgets.QRadioButton, "radioButton_admin"
+        )
+
     def _makeRegisterLabelClickable(self):
         """make the register button clickable"""
         self.label_or_register.mousePressEvent = self._registerLabelClicked
@@ -58,9 +68,17 @@ class LoginUI(QtWidgets.QMainWindow):
         self.hide()
 
     def _loginButtonClicked(self):
-        login_handler = Login(
-            self.lineEdit_username, self.lineEdit_password
-        )
+        # if login as student radio button is clicked
+        if self.radioButton_student.isChecked():
+            # login as student
+            login_handler = Login(
+                self.lineEdit_username, self.lineEdit_password
+            )
+        else:
+            # login as admin
+            admin_handler = Admin(
+                self.lineEdit_username, self.lineEdit_password
+            )
 
 
 class HandleLogin:
