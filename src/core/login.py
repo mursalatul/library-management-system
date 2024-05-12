@@ -30,7 +30,7 @@ class Login:
         # of if the username and password combo is
         # present in the database or not
         status = db.isUsernamePasswodPresent(
-            self.login_data["username"].text(), self.login_data["password"].text()
+            "login", self.login_data["username"].text(), self.login_data["password"].text()
         )
         self.login_data_status["username"] = status
         self.login_data_status["password"] = status

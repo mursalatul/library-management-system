@@ -30,10 +30,11 @@ class Database:
         except Exception as e:
             return str(e)
 
-    def isUsernamePasswodPresent(self, username: str, password: str) -> bool:
+    def isUsernamePasswodPresent(self, table_name: str, username: str, password: str) -> bool:
         """THIS METHOD IS SPECIFICALLY WRITTEN FOR FIND EXISTING USERNAME AND PASSWORD COMBO
-        find username & password combo.
+        in a table.
         Args:
+            table_name (str)
             username (str)
             password (str)
         Returns:
@@ -41,7 +42,7 @@ class Database:
         """
         try:
             cursor = self.conn.cursor()
-            quary = """SELECT * FROM login WHERE username = %s AND password = %s"""
+            quary = """SELECT * FROM {} WHERE username = %s AND password = %s""".format(table_name)
             cursor.execute(quary, (username, password))
             result = cursor.fetchone()
             cursor.close()
@@ -55,7 +56,6 @@ class Database:
         except Exception as e:
             # return False if exception occure
             print(str(e))
-            print("ok")
             return False
 
     def isDataPresent(self, table_name: str, column_name: str, data: str):
