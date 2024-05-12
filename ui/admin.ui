@@ -64,7 +64,7 @@
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -191,7 +191,7 @@ color: rgb(255, 255, 255);</string>
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QComboBox" name="comboBox">
+    <widget class="QComboBox" name="comboBox_book_search_by">
      <property name="geometry">
       <rect>
        <x>120</x>
@@ -219,7 +219,7 @@ color: rgb(255, 255, 255);</string>
       </property>
      </item>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="lineEdit_comboBox_targetted">
      <property name="geometry">
       <rect>
        <x>50</x>
@@ -232,7 +232,7 @@ color: rgb(255, 255, 255);</string>
       <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_5">
+    <widget class="QPushButton" name="pushButton_for_lineEdit_comboBox_targetted">
      <property name="geometry">
       <rect>
        <x>250</x>
@@ -271,7 +271,7 @@ color: rgb(255, 255, 255);</string>
       <string>Book Information</string>
      </property>
     </widget>
-    <widget class="QTextBrowser" name="textBrowser">
+    <widget class="QTextBrowser" name="textBrowser_book_information">
      <property name="geometry">
       <rect>
        <x>50</x>
