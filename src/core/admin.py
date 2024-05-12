@@ -4,6 +4,7 @@ from src.ui.popupui import MessageBox
 from src.core.database import Database
 from src.ui.adminui import AdminUI
 from data.window_instance import windows
+from src.core.admin_opetation_handler.search_book import SearchBook
 
 from data.database_info import database_credentials
 
@@ -42,7 +43,8 @@ class Admin:
             self._showUsernamePasswordFoundStatusPopupMessage(Message["login"]["in_database"]["found"])
 
             # loading admin ui
-            self.admin_ui = AdminUI()
+            # self.admin_ui = AdminUI()
+            self.admin_ui = AdminPageOperate()
             # hiding the login window
             windows["loginui"].hide()
 
@@ -78,3 +80,13 @@ class Admin:
     def _showUsernamePasswordFoundStatusPopupMessage(self, msg):
         msg_box = MessageBox()
         msg_box.showMessage(msg)
+
+class AdminPageOperate(AdminUI):
+    """operate all the operations of admin page"""
+    def __init__(self) -> None:
+        super().__init__() # executing the constructor of AdminUI
+
+        self.activate_search_book()
+
+    def activate_search_book(self):
+        self.sb = SearchBook(self)

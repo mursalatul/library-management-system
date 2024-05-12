@@ -1,3 +1,4 @@
+from reprlib import recursive_repr
 from PyQt5 import QtWidgets
 from PyQt5.uic import loadUi
 import sys
@@ -36,6 +37,11 @@ class AdminUI(QtWidgets.QMainWindow):
         self.admin_page_object["pushButton_search_book"] = self.findChild(
             QtWidgets.QWidget, "pushButton_search_book"
         )
+        
+        # widget operations main screen
+        self.admin_page_object["widget_operations"] = self.findChild(
+            QtWidgets.QWidget, "widget_operations"
+        )
 
         # combo box 
         self.admin_page_object["comboBox_book_search_by"] = self.findChild(
@@ -43,7 +49,7 @@ class AdminUI(QtWidgets.QMainWindow):
         )
 
         # combo box targetted line edit
-        self.admin_page_object["lineEdit"] = self.findChild(
+        self.admin_page_object["lineEdit_comboBox_targetted"] = self.findChild(
             QtWidgets.QLineEdit, "lineEdit_comboBox_targetted"
         )
 
@@ -57,12 +63,5 @@ class AdminUI(QtWidgets.QMainWindow):
             QtWidgets.QTextBrowser, "textBrowser_book_information"
         )
 
-        # widget operations main screen
-        self.admin_page_object["widget_operations"] = self.findChild(
-            QtWidgets.QWidget, "widget_operations"
-        )
-
-
-
-
-
+        
+        
