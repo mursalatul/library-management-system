@@ -85,7 +85,36 @@ class Database:
             # return False if exception occure
             print(str(e))
             return False
-        
+    
+    def getData(self, table_name: str, column_name: str, data: str):
+        """get spacific data(row) from a table based on a column
+
+        Args:
+            table_name (str): name of the targetted table
+            column_name (str): name of the targetted column
+            data (str): targetted data
+
+        Returns:
+            data/None: if data found return the data, else None
+        """
+        try:
+            cursor = self.conn.cursor()
+            query = f"SELECT * FROM {table_name} WHERE {column_name} = %s"
+            cursor.execute(query, (data,))
+            result = cursor.fetchone()
+            cursor.close()
+
+            if result:
+                # data found. return the data
+                return result
+            else:
+                # data not found
+                return None
+        except Exception as e:
+            # return False if exception occure
+            print(str(e))
+            return False
+
     def insertData(self, table_name: str, columns: list, values: list):
         """insert data in a table. must provide the list of colums and values in str
         Args:
