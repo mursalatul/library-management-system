@@ -3,6 +3,8 @@ from PyQt5 import QtWidgets
 from PyQt5.uic import loadUi
 import sys
 from data.window_instance import windows
+from data.icons import generated_icons
+
 class AdminUI(QtWidgets.QMainWindow):
     """load admin ui
     it will be called from login page, when
