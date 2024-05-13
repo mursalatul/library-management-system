@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="icons">
+    <file>minus.png</file>
+    <file>plus.png</file>
     <file>search.png</file>
     <file>exit.png</file>
     <file>book-stack.png</file>
