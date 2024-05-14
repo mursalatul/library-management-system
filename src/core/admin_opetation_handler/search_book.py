@@ -2,6 +2,9 @@ from PyQt5 import QtWidgets
 from src.core.database import Database
 
 class SearchBook:
+    """search book information by name, id or author and show the
+    book's id, name, author, edition, stock from book database
+    """
     def __init__(self, adminui: QtWidgets) -> None:
         # creating database object for query
         self.db = Database()
@@ -28,6 +31,8 @@ class SearchBook:
             self.book_information = self.db.getData(self.table, "author", self.book_search_value)
 
     def lineEdit_pushButton_clicked(self):
+        # reload the information of comboBox and lineEdit to get 
+        # latest search query every time the search icon button is clicked
         self.reloadFields()
         if self.book_information == None:
             if len(self.book_search_value):
