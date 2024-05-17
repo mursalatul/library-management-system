@@ -18,6 +18,8 @@ class SearchBook:
     
     def reloadFields(self):
         # getting the textbrowser, comboBox, lineEdit field for new input
+        # every time the search icon button will be clicked this method will be clicked
+        # to get the newest data of the fields
         self.textBrower = self.adminui.admin_page_object["textBrowser_book_information"]
         self.book_search_target = self.adminui.admin_page_object["comboBox_book_search_by"].currentText()
         self.book_search_value = self.adminui.admin_page_object["lineEdit_comboBox_targetted"].text()
