@@ -48,6 +48,11 @@ class SearchBook:
             # print(self.book_information)
             
     def toCustomString(self, info: tuple):
+        """create a standard printing format with the data 
+        from tuple. this printing format will be used to show
+        the book information in the textBrower
+        
+        """
         spacing = 5
         id_space = max(len(str(info[0])), len('ID')) + spacing
         book_name = max(len(str(info[1])), len("Book Name")) + spacing
