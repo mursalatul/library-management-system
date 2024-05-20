@@ -35,9 +35,14 @@ class AdminUI(QtWidgets.QMainWindow):
             QtWidgets.QWidget, "widget_sub_options_book_query"
         )
 
-        # push button of search book
+        # book query -> search button
         self.admin_page_object["pushButton_search_book"] = self.findChild(
-            QtWidgets.QWidget, "pushButton_search_book"
+            QtWidgets.QPushButton, "pushButton_search_book"
+        )
+
+        # book query -> add button
+        self.admin_page_object["pushButton_add_book"] = self.findChild(
+            QtWidgets.QPushButton, "pushButton_add_book"
         )
         
         # widget operations main screen
@@ -65,5 +70,24 @@ class AdminUI(QtWidgets.QMainWindow):
             QtWidgets.QTextBrowser, "textBrowser_book_information"
         )
 
-        
+        """loading stacked widgets """
+        # 
+        # start
+        self.admin_page_object["stackedWidget"] = self.findChild(
+            QtWidgets.QStackedWidget, "stackedWidget"
+        )
+
+        # page 1 (search book)
+        self.admin_page_object["page_book_query_search"] = self.findChild(
+            QtWidgets.QWidget, "page_book_query_search"
+        )
+
+        # page 2 (add book)
+        self.admin_page_object["page_book_query_add"] = self.findChild(
+            QtWidgets.QWidget, "page_book_query_add"
+        )
+
+
+        # end
+        # 
         

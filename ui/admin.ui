@@ -200,7 +200,7 @@
               </widget>
              </item>
              <item row="0" column="1">
-              <widget class="QLineEdit" name="lineEdit">
+              <widget class="QLineEdit" name="lineEdit_add_book_id">
                <property name="styleSheet">
                 <string notr="true">background-color: rgb(255, 255, 255);</string>
                </property>
@@ -214,7 +214,7 @@
               </widget>
              </item>
              <item row="1" column="1">
-              <widget class="QLineEdit" name="lineEdit_2">
+              <widget class="QLineEdit" name="lineEdit_add_book_name">
                <property name="styleSheet">
                 <string notr="true">background-color: rgb(255, 255, 255);</string>
                </property>
@@ -228,7 +228,7 @@
               </widget>
              </item>
              <item row="2" column="1">
-              <widget class="QLineEdit" name="lineEdit_3">
+              <widget class="QLineEdit" name="lineEdit_add_book_author">
                <property name="styleSheet">
                 <string notr="true">background-color: rgb(255, 255, 255);</string>
                </property>
@@ -242,7 +242,7 @@
               </widget>
              </item>
              <item row="3" column="1">
-              <widget class="QLineEdit" name="lineEdit_4">
+              <widget class="QLineEdit" name="lineEdit_add_book_number">
                <property name="styleSheet">
                 <string notr="true">background-color: rgb(255, 255, 255);</string>
                </property>
@@ -251,7 +251,7 @@
             </layout>
            </item>
            <item row="2" column="0">
-            <widget class="QPushButton" name="pushButton_3">
+            <widget class="QPushButton" name="pushButton_add_book_add">
              <property name="text">
               <string>Add</string>
              </property>
@@ -267,7 +267,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QTextBrowser" name="textBrowser">
+              <widget class="QTextBrowser" name="textBrowser_add_book_status">
                <property name="styleSheet">
                 <string notr="true">background-color: rgb(255, 255, 255);</string>
                </property>
@@ -463,7 +463,7 @@ color: rgb(255, 255, 255);</string>
        <item row="0" column="0">
         <layout class="QVBoxLayout" name="verticalLayout_6">
          <item>
-          <widget class="QPushButton" name="pushButton_search_book_2">
+          <widget class="QPushButton" name="pushButton_search_book">
            <property name="font">
             <font>
              <pointsize>9</pointsize>
@@ -482,7 +482,7 @@ color: rgb(255, 255, 255);</string>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_add_book_2">
+          <widget class="QPushButton" name="pushButton_add_book">
            <property name="text">
             <string>Add</string>
            </property>
@@ -493,7 +493,7 @@ color: rgb(255, 255, 255);</string>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_remove_book_2">
+          <widget class="QPushButton" name="pushButton_remove_book">
            <property name="text">
             <string>Remove</string>
            </property>

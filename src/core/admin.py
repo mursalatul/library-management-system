@@ -1,3 +1,4 @@
+from src.core.admin_opetation_handler.add_book import AddBook
 from src.core.validation import FormatVerify
 from data.Message_data import Message
 from src.ui.popupui import MessageBox
@@ -86,7 +87,24 @@ class AdminPageOperate(AdminUI):
     def __init__(self) -> None:
         super().__init__() # executing the constructor of AdminUI
 
+        # by default the search book page will show
         self.activate_search_book()
+        
+        # when search button will be clicked 
+        self.admin_page_object["pushButton_search_book"].clicked.connect(
+            self.activate_search_book
+        )
+
+        # when the add button will be clicked
+        self.admin_page_object["pushButton_add_book"].clicked.connect(
+            self.activate_add_book
+        )
+
 
     def activate_search_book(self):
+        self.admin_page_object["stackedWidget"].setCurrentWidget(self.admin_page_object["page_book_query_search"])
         self.sb = SearchBook(self)
+    
+    def activate_add_book(self):
+        self.admin_page_object["stackedWidget"].setCurrentWidget(self.admin_page_object["page_book_query_add"])
+        self.sb = AddBook(self)
