@@ -47,3 +47,6 @@ class AddBookDataAuthenticate:
             return False
         else:
             pass
+    
+    def checkDataAvailability(self):
+        pass
