@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="icons">
+    <file>settings.png</file>
     <file>minus.png</file>
     <file>plus.png</file>
     <file>search.png</file>

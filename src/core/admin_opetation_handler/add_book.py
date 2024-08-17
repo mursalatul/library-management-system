@@ -36,7 +36,7 @@ class AddBook:
 
 class AddBookDataAuthenticate:
     """check id, book_name, author_name and stock type"""
-    def setter(self, id: str, book_name: str, author_name: str, stock: str)
+    def setter(self, id: str, book_name: str, author_name: str, stock: str):
         self.id = id
         self.book_name = book_name
         self.author_name = author_name
@@ -46,7 +46,9 @@ class AddBookDataAuthenticate:
         if len(self.id) == 0 or len(self.book_name) == 0 or len(self.author_name) == 0 or len(self.stock) == 0:
             return False
         else:
-            pass
+            return True
     
     def checkDataAvailability(self):
+        """this method will make sure
+        1. for old input(id, name, author present) """
         pass

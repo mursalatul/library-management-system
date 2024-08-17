@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>740</width>
-    <height>684</height>
+    <width>737</width>
+    <height>688</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,10 +15,247 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="1">
+     <widget class="QWidget" name="widget_sub_options_book_query" native="true">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(199, 199, 199);</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="0" column="0">
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <item>
+          <widget class="QPushButton" name="pushButton_add_book">
+           <property name="text">
+            <string>Add</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../data/icons/icons_resource.qrc">
+             <normaloff>:/icons/plus.png</normaloff>:/icons/plus.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_search_book">
+           <property name="font">
+            <font>
+             <pointsize>9</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Search</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../data/icons/icons_resource.qrc">
+             <normaloff>:/icons/search.png</normaloff>:/icons/search.png</iconset>
+           </property>
+           <property name="autoExclusive">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_remove_book">
+           <property name="text">
+            <string>Remove</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../data/icons/icons_resource.qrc">
+             <normaloff>:/icons/minus.png</normaloff>:/icons/minus.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_3">
+           <property name="text">
+            <string>Modify</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../data/icons/icons_resource.qrc">
+             <normaloff>:/icons/settings.png</normaloff>:/icons/settings.png</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QWidget" name="widget_main_options" native="true">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(81, 81, 81);</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <property name="leftMargin">
+        <number>9</number>
+       </property>
+       <item row="0" column="0">
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QLabel" name="label_admin_panel">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);</string>
+             </property>
+             <property name="text">
+              <string>Admin Panel</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QPushButton" name="pushButton_book_query">
+             <property name="font">
+              <font>
+               <pointsize>9</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+border-color: rgb(218, 218, 218);</string>
+             </property>
+             <property name="text">
+              <string>Book Query</string>
+             </property>
+             <property name="icon">
+              <iconset resource="../data/icons/icons_resource.qrc">
+               <normaloff>:/icons/book-stack.png</normaloff>:/icons/book-stack.png</iconset>
+             </property>
+             <property name="checkable">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);</string>
+             </property>
+             <property name="text">
+              <string>Option 2</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_2">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);</string>
+             </property>
+             <property name="text">
+              <string>option 3</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_exit">
+             <property name="font">
+              <font>
+               <pointsize>9</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 116, 35);
+color: rgb(255, 255, 255);</string>
+             </property>
+             <property name="text">
+              <string>Exit</string>
+             </property>
+             <property name="icon">
+              <iconset resource="../data/icons/icons_resource.qrc">
+               <normaloff>:/icons/exit.png</normaloff>:/icons/exit.png</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
     <item row="0" column="3">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="page_book_query_search">
        <layout class="QGridLayout" name="gridLayout_2">
@@ -280,23 +517,16 @@
         </item>
        </layout>
       </widget>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QWidget" name="widget_main_options" native="true">
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(81, 81, 81);</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_3">
-       <property name="leftMargin">
-        <number>9</number>
-       </property>
-       <item row="0" column="0">
-        <layout class="QVBoxLayout" name="verticalLayout_3">
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_3">
-           <item>
-            <widget class="QLabel" name="label_admin_panel">
+      <widget class="QWidget" name="page_book_query_remove">
+       <layout class="QGridLayout" name="gridLayout_9">
+        <item row="0" column="0">
+         <widget class="QWidget" name="widget_operations_3" native="true">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(196, 242, 255);</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_8">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_10">
              <property name="font">
               <font>
                <pointsize>14</pointsize>
@@ -304,208 +534,219 @@
                <bold>true</bold>
               </font>
              </property>
-             <property name="styleSheet">
-              <string notr="true">color: rgb(255, 255, 255);</string>
-             </property>
              <property name="text">
-              <string>Admin Panel</string>
+              <string>Remove Book</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
              </property>
             </widget>
            </item>
-          </layout>
-         </item>
-         <item>
-          <spacer name="verticalSpacer_2">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <layout class="QVBoxLayout" name="verticalLayout_4">
-           <item>
-            <widget class="QPushButton" name="pushButton_book_query">
-             <property name="font">
-              <font>
-               <pointsize>9</pointsize>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(255, 255, 255);
-border-color: rgb(218, 218, 218);</string>
-             </property>
+           <item row="1" column="0">
+            <layout class="QFormLayout" name="formLayout_2">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_11">
+               <property name="text">
+                <string>ID:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLineEdit" name="lineEdit_add_book_id_2">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 255, 255);</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_12">
+               <property name="text">
+                <string>Name:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="lineEdit_add_book_name_2">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 255, 255);</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="label_13">
+               <property name="text">
+                <string>Author:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLineEdit" name="lineEdit_add_book_author_2">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 255, 255);</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="label_14">
+               <property name="text">
+                <string>Number:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLineEdit" name="lineEdit_add_book_number_2">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 255, 255);</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="2" column="0">
+            <widget class="QPushButton" name="pushButton_add_book_add_2">
              <property name="text">
-              <string>Book Query</string>
-             </property>
-             <property name="icon">
-              <iconset resource="../data/icons/icons_resource.qrc">
-               <normaloff>:/icons/book-stack.png</normaloff>:/icons/book-stack.png</iconset>
-             </property>
-             <property name="checkable">
-              <bool>false</bool>
+              <string>Add</string>
              </property>
             </widget>
            </item>
-           <item>
-            <spacer name="verticalSpacer_3">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>40</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item>
-            <widget class="QPushButton" name="pushButton">
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(255, 255, 255);</string>
-             </property>
-             <property name="text">
-              <string>Option 2</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <spacer name="verticalSpacer_4">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>40</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item>
-            <widget class="QPushButton" name="pushButton_2">
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(255, 255, 255);</string>
-             </property>
-             <property name="text">
-              <string>option 3</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <spacer name="verticalSpacer_5">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>40</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item>
-            <widget class="QPushButton" name="pushButton_exit">
-             <property name="font">
-              <font>
-               <pointsize>9</pointsize>
-              </font>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(255, 116, 35);
-color: rgb(255, 255, 255);</string>
-             </property>
-             <property name="text">
-              <string>Exit</string>
-             </property>
-             <property name="icon">
-              <iconset resource="../data/icons/icons_resource.qrc">
-               <normaloff>:/icons/exit.png</normaloff>:/icons/exit.png</iconset>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <spacer name="verticalSpacer">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>40</height>
-              </size>
-             </property>
-            </spacer>
+           <item row="3" column="0">
+            <layout class="QVBoxLayout" name="verticalLayout_7">
+             <item>
+              <widget class="QLabel" name="label_15">
+               <property name="text">
+                <string>Status</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QTextBrowser" name="textBrowser_add_book_status_2">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 255, 255);</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
           </layout>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QWidget" name="widget_sub_options_book_query" native="true">
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(199, 199, 199);</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_5">
-       <item row="0" column="0">
-        <layout class="QVBoxLayout" name="verticalLayout_6">
-         <item>
-          <widget class="QPushButton" name="pushButton_search_book">
-           <property name="font">
-            <font>
-             <pointsize>9</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>Search</string>
-           </property>
-           <property name="icon">
-            <iconset resource="../data/icons/icons_resource.qrc">
-             <normaloff>:/icons/search.png</normaloff>:/icons/search.png</iconset>
-           </property>
-           <property name="autoExclusive">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pushButton_add_book">
-           <property name="text">
-            <string>Add</string>
-           </property>
-           <property name="icon">
-            <iconset resource="../data/icons/icons_resource.qrc">
-             <normaloff>:/icons/plus.png</normaloff>:/icons/plus.png</iconset>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pushButton_remove_book">
-           <property name="text">
-            <string>Remove</string>
-           </property>
-           <property name="icon">
-            <iconset resource="../data/icons/icons_resource.qrc">
-             <normaloff>:/icons/minus.png</normaloff>:/icons/minus.png</iconset>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_book_query_modify">
+       <layout class="QGridLayout" name="gridLayout_11">
+        <item row="0" column="0">
+         <widget class="QWidget" name="widget_operations_4" native="true">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(196, 242, 255);</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_10">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_16">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Modify Existing Book</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <layout class="QFormLayout" name="formLayout_3">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_17">
+               <property name="text">
+                <string>ID:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLineEdit" name="lineEdit_add_book_id_3">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 255, 255);</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_18">
+               <property name="text">
+                <string>Name:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="lineEdit_add_book_name_3">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 255, 255);</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="label_19">
+               <property name="text">
+                <string>Author:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLineEdit" name="lineEdit_add_book_author_3">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 255, 255);</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="label_20">
+               <property name="text">
+                <string>Number:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLineEdit" name="lineEdit_add_book_number_3">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 255, 255);</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="2" column="0">
+            <widget class="QPushButton" name="pushButton_add_book_add_3">
+             <property name="text">
+              <string>Change</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <layout class="QVBoxLayout" name="verticalLayout_8">
+             <item>
+              <widget class="QLabel" name="label_21">
+               <property name="text">
+                <string>Status</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QTextBrowser" name="textBrowser_add_book_status_3">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 255, 255);</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -515,7 +756,7 @@ color: rgb(255, 255, 255);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>740</width>
+     <width>737</width>
      <height>22</height>
     </rect>
    </property>
