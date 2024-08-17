@@ -100,6 +100,11 @@ class AdminPageOperate(AdminUI):
             self.activate_add_book
         )
 
+        #when the remove button will be clicked
+        self.admin_page_object['pushButton_remove_book'].clicked.connect(self.active_remove_book)
+        #when the modify button will be clicked
+        self.admin_page_object['pushButton_modify_book'].clicked.connect(self.active_modify_book)
+
 
     def activate_search_book(self):
         self.admin_page_object["stackedWidget"].setCurrentWidget(self.admin_page_object["page_book_query_search"])
@@ -108,3 +113,9 @@ class AdminPageOperate(AdminUI):
     def activate_add_book(self):
         self.admin_page_object["stackedWidget"].setCurrentWidget(self.admin_page_object["page_book_query_add"])
         self.sb = AddBook(self)
+
+    def active_remove_book(self):
+        self.admin_page_object['stackedWidget'].setCurrentWidget(self.admin_page_object['page_book_query_remove'])
+
+    def active_modify_book(self):
+        self.admin_page_object['stackedWidget'].setCurrentWidget(self.admin_page_object['page_book_query_modify'])

@@ -24,17 +24,6 @@
        <item row="0" column="0">
         <layout class="QVBoxLayout" name="verticalLayout_6">
          <item>
-          <widget class="QPushButton" name="pushButton_add_book">
-           <property name="text">
-            <string>Add</string>
-           </property>
-           <property name="icon">
-            <iconset resource="../data/icons/icons_resource.qrc">
-             <normaloff>:/icons/plus.png</normaloff>:/icons/plus.png</iconset>
-           </property>
-          </widget>
-         </item>
-         <item>
           <widget class="QPushButton" name="pushButton_search_book">
            <property name="font">
             <font>
@@ -54,6 +43,17 @@
           </widget>
          </item>
          <item>
+          <widget class="QPushButton" name="pushButton_add_book">
+           <property name="text">
+            <string>Add</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../data/icons/icons_resource.qrc">
+             <normaloff>:/icons/plus.png</normaloff>:/icons/plus.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QPushButton" name="pushButton_remove_book">
            <property name="text">
             <string>Remove</string>
@@ -65,7 +65,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_3">
+          <widget class="QPushButton" name="pushButton_modify_book">
            <property name="text">
             <string>Modify</string>
            </property>
@@ -255,7 +255,7 @@ color: rgb(255, 255, 255);</string>
     <item row="0" column="3">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_book_query_search">
        <layout class="QGridLayout" name="gridLayout_2">
@@ -605,7 +605,7 @@ color: rgb(255, 255, 255);</string>
            <item row="2" column="0">
             <widget class="QPushButton" name="pushButton_add_book_add_2">
              <property name="text">
-              <string>Add</string>
+              <string>Remove</string>
              </property>
             </widget>
            </item>

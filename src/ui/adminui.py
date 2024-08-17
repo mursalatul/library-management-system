@@ -45,6 +45,16 @@ class AdminUI(QtWidgets.QMainWindow):
             QtWidgets.QPushButton, "pushButton_add_book"
         )
         
+        # book query -> remove button
+        self.admin_page_object['pushButton_remove_book'] = self.findChild(
+            QtWidgets.QPushButton, "pushButton_remove_book"
+        )
+
+        # book query -> modify button
+        self.admin_page_object['pushButton_modify_book'] = self.findChild(
+            QtWidgets.QPushButton, "pushButton_modify_book"
+        )
+
         # widget operations main screen
         self.admin_page_object["widget_operations"] = self.findChild(
             QtWidgets.QWidget, "widget_operations"
@@ -85,6 +95,16 @@ class AdminUI(QtWidgets.QMainWindow):
         # page 2 (add book)
         self.admin_page_object["page_book_query_add"] = self.findChild(
             QtWidgets.QWidget, "page_book_query_add"
+        )
+
+        # page 3 (remove book)
+        self.admin_page_object["page_book_query_remove"] = self.findChild(
+            QtWidgets.QWidget, "page_book_query_remove"
+        )
+
+        # page 4 (modify book)
+        self.admin_page_object["page_book_query_modify"] = self.findChild(
+            QtWidgets.QWidget, "page_book_query_modify"
         )
 
 
