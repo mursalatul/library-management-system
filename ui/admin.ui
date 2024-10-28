@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>862</width>
-    <height>749</height>
+    <width>848</width>
+    <height>726</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -566,7 +566,7 @@ color: rgb(255, 255, 255);</string>
               </widget>
              </item>
              <item row="0" column="1">
-              <widget class="QLineEdit" name="lineEdit_add_book_id_2">
+              <widget class="QLineEdit" name="lineEdit_remove_book_id">
                <property name="styleSheet">
                 <string notr="true">background-color: rgb(255, 255, 255);</string>
                </property>
@@ -575,7 +575,7 @@ color: rgb(255, 255, 255);</string>
             </layout>
            </item>
            <item row="2" column="0">
-            <widget class="QPushButton" name="pushButton_add_book_remove_button">
+            <widget class="QPushButton" name="pushButton_remove_book_remove_button">
              <property name="text">
               <string>Remove</string>
              </property>
@@ -591,7 +591,7 @@ color: rgb(255, 255, 255);</string>
               </widget>
              </item>
              <item>
-              <widget class="QTextBrowser" name="textBrowser_add_book_status_2">
+              <widget class="QTextBrowser" name="textBrowser_remove_book_status">
                <property name="styleSheet">
                 <string notr="true">background-color: rgb(255, 255, 255);</string>
                </property>
@@ -728,7 +728,7 @@ color: rgb(255, 255, 255);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>862</width>
+     <width>848</width>
      <height>22</height>
     </rect>
    </property>
