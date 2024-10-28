@@ -255,7 +255,7 @@ color: rgb(255, 255, 255);</string>
     <item row="0" column="3">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="page_book_query_search">
        <layout class="QGridLayout" name="gridLayout_2">
@@ -639,7 +639,7 @@ color: rgb(255, 255, 255);</string>
               </widget>
              </item>
              <item row="0" column="1">
-              <widget class="QLineEdit" name="lineEdit_add_book_id_3">
+              <widget class="QLineEdit" name="lineEdit_modify_book_id">
                <property name="styleSheet">
                 <string notr="true">background-color: rgb(255, 255, 255);</string>
                </property>
@@ -653,7 +653,7 @@ color: rgb(255, 255, 255);</string>
               </widget>
              </item>
              <item row="1" column="1">
-              <widget class="QLineEdit" name="lineEdit_add_book_name_3">
+              <widget class="QLineEdit" name="lineEdit_modify_book_name">
                <property name="styleSheet">
                 <string notr="true">background-color: rgb(255, 255, 255);</string>
                </property>
@@ -667,30 +667,44 @@ color: rgb(255, 255, 255);</string>
               </widget>
              </item>
              <item row="2" column="1">
-              <widget class="QLineEdit" name="lineEdit_add_book_author_3">
+              <widget class="QLineEdit" name="lineEdit_modify_book_author">
                <property name="styleSheet">
                 <string notr="true">background-color: rgb(255, 255, 255);</string>
                </property>
               </widget>
              </item>
-             <item row="3" column="0">
+             <item row="4" column="0">
               <widget class="QLabel" name="label_20">
                <property name="text">
                 <string>Number:</string>
                </property>
               </widget>
              </item>
-             <item row="3" column="1">
-              <widget class="QLineEdit" name="lineEdit_add_book_number_3">
+             <item row="4" column="1">
+              <widget class="QLineEdit" name="lineEdit_modify_book_number">
                <property name="styleSheet">
                 <string notr="true">background-color: rgb(255, 255, 255);</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="label_12">
+               <property name="text">
+                <string>Edition</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLineEdit" name="lineEdit_modify_book_edition">
+               <property name="styleSheet">
+                <string notr="true">background: white;</string>
                </property>
               </widget>
              </item>
             </layout>
            </item>
            <item row="2" column="0">
-            <widget class="QPushButton" name="pushButton_add_book_add_3">
+            <widget class="QPushButton" name="pushButton_modify_book_change">
              <property name="text">
               <string>Change</string>
              </property>
@@ -706,7 +720,7 @@ color: rgb(255, 255, 255);</string>
               </widget>
              </item>
              <item>
-              <widget class="QTextBrowser" name="textBrowser_add_book_status_3">
+              <widget class="QTextBrowser" name="textBrowser_modify_book_status">
                <property name="styleSheet">
                 <string notr="true">background-color: rgb(255, 255, 255);</string>
                </property>

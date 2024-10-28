@@ -23,4 +23,7 @@ Message = {
         },
         "status": "Registration Complete. Login to use the app.",
     },
+    "update_book": {
+        "id": "Provided ID is not used by any book",
+    },
 }

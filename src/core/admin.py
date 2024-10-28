@@ -7,6 +7,7 @@ from src.ui.adminui import AdminUI
 from data.window_instance import windows
 from src.core.admin_opetation_handler.search_book import SearchBook
 from src.core.admin_opetation_handler.remove_book import RemoveBook
+from src.core.admin_opetation_handler.modify_book import ModifyBook
 
 from data.database_info import database_credentials
 
@@ -121,3 +122,4 @@ class AdminPageOperate(AdminUI):
 
     def active_modify_book(self):
         self.admin_page_object['stackedWidget'].setCurrentWidget(self.admin_page_object['page_book_query_modify'])
+        self.sb = ModifyBook(self)

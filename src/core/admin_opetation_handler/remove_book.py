@@ -41,12 +41,11 @@ class RemoveBook:
             return False
         else:
             # removing the book form the table
-            print(db.deleteData('books','book_id',id))
+            db.deleteData('books','book_id',id)
             return status
 
     def removeButtonAction(self):
         status = self.validId()
-        print(status)
         if not status:
           self.remove_book_object["textBrowser_remove_book_status"].setPlainText("Invalid id")
         else:
