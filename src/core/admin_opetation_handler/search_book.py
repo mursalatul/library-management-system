@@ -1,10 +1,12 @@
 from PyQt5 import QtWidgets
 from src.core.database import Database
 
+
 class SearchBook:
     """search book information by name, id or author and show the
     book's id, name, author, edition, stock from book database
     """
+
     def __init__(self, adminui: QtWidgets) -> None:
         # creating database object for query
         self.db = Database()
@@ -12,10 +14,10 @@ class SearchBook:
         self.table = "books"
         self.adminui = adminui
 
-        
         # triger search by line edit button
-        adminui.admin_page_object["pushButton_for_lineEdit_comboBox_targetted"].clicked.connect(self.lineEdit_pushButton_clicked)
-    
+        adminui.admin_page_object["pushButton_for_lineEdit_comboBox_targetted"].clicked.connect(
+            self.lineEdit_pushButton_clicked)
+
     def reloadFields(self):
         # getting the textbrowser, comboBox, lineEdit field for new input
         # every time the search icon button will be clicked this method will be clicked
@@ -46,7 +48,7 @@ class SearchBook:
         else:
             self.textBrower.setPlainText(self.toCustomString(self.book_information))
             # print(self.book_information)
-            
+
     def toCustomString(self, info: tuple):
         """create a standard printing format with the data 
         from tuple. this printing format will be used to show
@@ -60,7 +62,9 @@ class SearchBook:
         version = max(len(str(info[3])), len("Version")) + spacing
         stock = max(len(str(info[4])), len("Stock")) + spacing
 
-        header = "ID".ljust(id_space) + "Book Name".ljust(book_name) + "Author".ljust(author) + "Version".ljust(version) + "Stock".ljust(stock) + "\n"
+        header = "ID".ljust(id_space) + "Book Name".ljust(book_name) + "Author".ljust(author) + "Version".ljust(
+            version) + "Stock".ljust(stock) + "\n"
         header += "".center(len(header), "-") + "\n"
 
-        return header + str(info[0]).ljust(id_space) + str(info[1]).ljust(book_name) + str(info[2]).ljust(author) + str(info[3]).ljust(version) + str(info[4]).ljust(stock)
+        return header + str(info[0]).ljust(id_space) + str(info[1]).ljust(book_name) + str(info[2]).ljust(author) + str(
+            info[3]).ljust(version) + str(info[4]).ljust(stock)

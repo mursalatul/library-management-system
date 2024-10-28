@@ -2,6 +2,7 @@ import psycopg2
 
 from data.database_info import database_credentials  # use it(with app)
 
+
 # from database_info import database_credentials  # delete it
 
 
@@ -85,7 +86,7 @@ class Database:
             # return False if exception occure
             print(str(e))
             return False
-    
+
     def getData(self, table_name: str, column_name: str, data: str):
         """get spacific data(row) from a table based on a column
 
@@ -129,9 +130,9 @@ class Database:
             # number of columsn must be same as number of values
             if len(columns) != len(values):
                 raise ValueError("column number and value number is not same.")
-            
+
             cursor = self.conn.cursor()
-            query = f"INSERT INTO {table_name} ({', '.join(columns)}) VALUES ({', '.join(['%s']*len(values))})"
+            query = f"INSERT INTO {table_name} ({', '.join(columns)}) VALUES ({', '.join(['%s'] * len(values))})"
 
             cursor.execute(query, values)
             self.conn.commit()
@@ -170,7 +171,6 @@ class Database:
         except Exception as e:
             print("error in database.py->_createTable()")
             print(str(e))
-
 
 # d = Database()
 # print(d.connect(database_credentials))

@@ -1,8 +1,10 @@
 from PyQt5 import QtWidgets
 from src.core.database import Database
 
+
 class AddBook:
     """add book to the database"""
+
     def __init__(self, adminui: QtWidgets) -> None:
         self.adminui = adminui
 
@@ -44,8 +46,8 @@ class AddBook:
                     self.add_book_object["lineEdit_add_book_author"].text(),
                     self.add_book_object["lineEdit_add_book_edition"].text(),
                     self.add_book_object["lineEdit_add_book_number"].text()
-                    ]
-                )
+                ]
+            )
             self.add_book_object["textBrowser_add_book_status"].setPlainText(
                 "Book Successfully Added.\n" + self.toCustomString((
                     self.add_book_object["lineEdit_add_book_id"].text(),
@@ -69,10 +71,12 @@ class AddBook:
         version = max(len(str(info[3])), len("Version")) + spacing
         stock = max(len(str(info[4])), len("Stock")) + spacing
 
-        header = "ID".ljust(id_space) + "Book Name".ljust(book_name) + "Author".ljust(author) + "Version".ljust(version) + "Stock".ljust(stock) + "\n"
+        header = "ID".ljust(id_space) + "Book Name".ljust(book_name) + "Author".ljust(author) + "Version".ljust(
+            version) + "Stock".ljust(stock) + "\n"
         header += "".center(len(header), "-") + "\n"
 
-        return header + str(info[0]).ljust(id_space) + str(info[1]).ljust(book_name) + str(info[2]).ljust(author) + str(info[3]).ljust(version) + str(info[4]).ljust(stock)
+        return header + str(info[0]).ljust(id_space) + str(info[1]).ljust(book_name) + str(info[2]).ljust(author) + str(
+            info[3]).ljust(version) + str(info[4]).ljust(stock)
 
     def loadElementsOfAddBookPage(self):
         self.add_book_object = {}
@@ -101,6 +105,7 @@ class AddBook:
 
 class AddBookDataAuthenticate:
     """check id, book_name, author_name and stock type"""
+
     def setter(self, id, book_name, author_name, edition, stock):
         self.id = id
         self.book_name = book_name
@@ -108,13 +113,13 @@ class AddBookDataAuthenticate:
         self.edition = edition
         self.stock = stock
 
-    def checkDataType(self) -> bool:       
-        if len(self.id.text()) == 0 or len(self.book_name.text()) == 0 or len(self.author_name.text()) == 0 or len(self.edition.text()) == 0 or len(self.stock.text()) == 0:
+    def checkDataType(self) -> bool:
+        if len(self.id.text()) == 0 or len(self.book_name.text()) == 0 or len(self.author_name.text()) == 0 or len(
+                self.edition.text()) == 0 or len(self.stock.text()) == 0:
             return False
         else:
             return True
-    
-    
+
     def isValidData(self):
         """check
         1. if id already exist in the database
@@ -129,7 +134,7 @@ class AddBookDataAuthenticate:
             return False
         else:
             self._markBorder(self.id, "white")
-        
+
         # checking book name
         if db.getData("books", "book_name", self.book_name.text()) != None:
             self.error_message = "Book already exist. Please update the existing book."
@@ -153,14 +158,13 @@ class AddBookDataAuthenticate:
             return False
         else:
             self._markBorder(self.stock, "white")
-        
+
         # if all ok, return true
         return True
-    
+
     def _markBorder(self, element, color):
         """mark/unmark the borders of the fields if error found"""
         if color == "white":
             element.setStyleSheet("")
         else:
             element.setStyleSheet("border: 2px solid red;")
-            

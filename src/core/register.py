@@ -20,7 +20,7 @@ class Register:
     libraryid = False
 
     def __init__(
-        self, firstname, lastname, username, libraryid, password, retyped_password
+            self, firstname, lastname, username, libraryid, password, retyped_password
     ) -> None:
         """
         NOTE
@@ -58,11 +58,14 @@ class Register:
         """store user information to user_info_basic table"""
         db = Database()
         # saving to user_info_basic table
-        db.insertData("user_info_basic", ["libraryid", "firstname", "lastname", "username"], [self.registerData["libraryid"].text(), self.registerData["firstname"].text(), self.registerData["lastname"].text(), self.registerData["username"].text()])
+        db.insertData("user_info_basic", ["libraryid", "firstname", "lastname", "username"],
+                      [self.registerData["libraryid"].text(), self.registerData["firstname"].text(),
+                       self.registerData["lastname"].text(), self.registerData["username"].text()])
 
         # saving to login table
-        db.insertData("login", ["libraryid", "username", "password"], [self.registerData["libraryid"].text(), self.registerData["username"].text(), self.registerData["password"].text()])
-
+        db.insertData("login", ["libraryid", "username", "password"],
+                      [self.registerData["libraryid"].text(), self.registerData["username"].text(),
+                       self.registerData["password"].text()])
 
     def _existingDataFound(self):
         """ "show message for existing data found and mark the box"""
@@ -93,8 +96,8 @@ class Register:
             data=self.registerData["username"].text(),
         )
         if (
-            not self.registerDataStatus["libraryid"]
-            or not self.registerDataStatus["username"]
+                not self.registerDataStatus["libraryid"]
+                or not self.registerDataStatus["username"]
         ):
             # show message and mark box
             self._existingDataFound()
@@ -110,8 +113,8 @@ class Register:
 
     def _matchPassword(self):
         if (
-            self.registerData["password"].text()
-            != self.registerData["retyped_password"].text()
+                self.registerData["password"].text()
+                != self.registerData["retyped_password"].text()
         ):
             msg_box = MessageBox()
             msg_box.showMessage(Message["register"]["password_match_error"])

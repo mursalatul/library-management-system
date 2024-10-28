@@ -9,7 +9,6 @@ diu_lib = Library("DIU", "Diu Unofficial")
 # for testing by deafult seted an admin
 admin = diu_lib.add_users(1, 'admin', 'admin')
 
-
 # demo user for testing purpose
 nahid = diu_lib.add_users(15, "nahid", "nahid_usha")
 pallob = diu_lib.add_users(19, "pallob", "pallob_pal")
@@ -61,8 +60,8 @@ while running:
             print("Options: \n")
 
             print("1 : Add Book")
-            print("2 : Show Users") #will be implemented soon 
-            print("3 : Show Books") #will be implemented soon  
+            print("2 : Show Users")  # will be implemented soon
+            print("3 : Show Books")  # will be implemented soon
             # more functionalities will be here 
             print("4 : Logout")
 

@@ -2,6 +2,7 @@ from PyQt5 import QtWidgets
 from src.core.database import Database
 from data.Message_data import Message
 
+
 class ModifyBook:
     def __init__(self, adminui: QtWidgets) -> None:
         self.adminui = adminui
@@ -14,29 +15,27 @@ class ModifyBook:
 
         # id
         self.modify_book_object["lineEdit_modify_book_id"] = self.adminui.findChild(
-            QtWidgets.QLineEdit,  "lineEdit_modify_book_id"
-        )
+            QtWidgets.QLineEdit, "lineEdit_modify_book_id")
 
         # name
         self.modify_book_object["lineEdit_modify_book_name"] = self.adminui.findChild(
-            QtWidgets.QLineEdit,  "lineEdit_modify_book_name"
+            QtWidgets.QLineEdit, "lineEdit_modify_book_name"
         )
 
         # author
         self.modify_book_object["lineEdit_modify_book_author"] = self.adminui.findChild(
-            QtWidgets.QLineEdit,  "lineEdit_modify_book_author"
+            QtWidgets.QLineEdit, "lineEdit_modify_book_author"
         )
 
         # edition
         self.modify_book_object["lineEdit_modify_book_edition"] = self.adminui.findChild(
-            QtWidgets.QLineEdit,  "lineEdit_modify_book_edition"
+            QtWidgets.QLineEdit, "lineEdit_modify_book_edition"
         )
 
         # number
         self.modify_book_object["lineEdit_modify_book_number"] = self.adminui.findChild(
-            QtWidgets.QLineEdit,  "lineEdit_modify_book_number"
+            QtWidgets.QLineEdit, "lineEdit_modify_book_number"
         )
-
 
         self.modify_book_object["textBrowser_modify_book_status"] = self.adminui.findChild(
             QtWidgets.QTextBrowser, "textBrowser_modify_book_status"
@@ -44,9 +43,6 @@ class ModifyBook:
         self.modify_book_object["pushButton_modify_book_change"] = self.adminui.findChild(
             QtWidgets.QPushButton, "pushButton_modify_book_change"
         )
-
-
-
 
     def modifyButtonAction(self):
         book_auth = ModifyBookDataAuthenticate()
@@ -113,6 +109,7 @@ class ModifyBook:
         return header + str(info[0]).ljust(id_space) + str(info[1]).ljust(book_name) + str(info[2]).ljust(author) + str(
             info[3]).ljust(version) + str(info[4]).ljust(stock)
 
+
 class ModifyBookDataAuthenticate:
     """check id, book_name, author_name and stock type"""
 
@@ -144,7 +141,6 @@ class ModifyBookDataAuthenticate:
             return False
         else:
             self._markBorder(self.id, "white")
-
 
         # checking if the edition is a pure number or not
         if not self.edition.text().isnumeric():

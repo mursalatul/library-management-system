@@ -11,6 +11,7 @@ from src.core.admin_opetation_handler.modify_book import ModifyBook
 
 from data.database_info import database_credentials
 
+
 class Admin:
     # username and password format status
     admin_login_data_status = {"username": False, "password": False}
@@ -84,14 +85,16 @@ class Admin:
         msg_box = MessageBox()
         msg_box.showMessage(msg)
 
+
 class AdminPageOperate(AdminUI):
     """operate all the operations of admin page"""
+
     def __init__(self) -> None:
-        super().__init__() # executing the constructor of AdminUI
+        super().__init__()  # executing the constructor of AdminUI
 
         # by default the search book page will show
         self.activate_search_book()
-        
+
         # when search button will be clicked 
         self.admin_page_object["pushButton_search_book"].clicked.connect(
             self.activate_search_book
@@ -102,16 +105,15 @@ class AdminPageOperate(AdminUI):
             self.activate_add_book
         )
 
-        #when the remove button will be clicked
+        # when the remove button will be clicked
         self.admin_page_object['pushButton_remove_book'].clicked.connect(self.active_remove_book)
-        #when the modify button will be clicked
+        # when the modify button will be clicked
         self.admin_page_object['pushButton_modify_book'].clicked.connect(self.active_modify_book)
-
 
     def activate_search_book(self):
         self.admin_page_object["stackedWidget"].setCurrentWidget(self.admin_page_object["page_book_query_search"])
         self.sb = SearchBook(self)
-    
+
     def activate_add_book(self):
         self.admin_page_object["stackedWidget"].setCurrentWidget(self.admin_page_object["page_book_query_add"])
         self.sb = AddBook(self)

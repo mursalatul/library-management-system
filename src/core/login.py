@@ -5,6 +5,7 @@ from src.core.database import Database
 
 from data.database_info import database_credentials
 
+
 class Login:
     # username and password format status
     login_data_status = {"username": False, "password": False}

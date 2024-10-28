@@ -1,5 +1,5 @@
 class Cache:
     need = {
-        'dir' : ['cache']
+        'dir': ['cache']
     }
-    # def 
+    # def

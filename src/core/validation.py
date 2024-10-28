@@ -10,7 +10,7 @@ class FormatVerify:
         """
         # return False if the string is not alpha numeric or underscore
         if len(username) == 0:
-            return False 
+            return False
         for character in list(username.strip()):
             if not character.isalnum() and not character == '_' or character.isupper():
                 return False
@@ -31,11 +31,11 @@ class FormatVerify:
             if not character.isalpha():
                 return False
         return True
-    
+
     def verifyPasswordFormat(self, password: str) -> bool:
         if len(password) == 0:
             return False
-        
+
         big_letters, small_letters, numbers, spacial_char = 0, 0, 0, 0
         password = password.strip()
 
@@ -54,7 +54,7 @@ class FormatVerify:
                 numbers += 1
             else:
                 spacial_char += 1
-        
+
         if big_letters > 0 and small_letters > 0 and numbers > 0 and spacial_char > 0:
             return True
         else:

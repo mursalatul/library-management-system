@@ -1,6 +1,7 @@
 from PyQt5 import QtWidgets
 from src.core.database import Database
 
+
 class RemoveBook:
     def __init__(self, adminui: QtWidgets) -> None:
         self.adminui = adminui
@@ -11,7 +12,7 @@ class RemoveBook:
     def loadElementsOfRemoveBookPage(self):
         self.remove_book_object = {}
         self.remove_book_object["lineEdit_remove_book_id"] = self.adminui.findChild(
-            QtWidgets.QLineEdit,  "lineEdit_remove_book_id"
+            QtWidgets.QLineEdit, "lineEdit_remove_book_id"
         )
         self.remove_book_object["textBrowser_remove_book_status"] = self.adminui.findChild(
             QtWidgets.QTextBrowser, "textBrowser_remove_book_status"
@@ -19,6 +20,7 @@ class RemoveBook:
         self.remove_book_object["pushButton_remove_book_remove_button"] = self.adminui.findChild(
             QtWidgets.QPushButton, "pushButton_remove_book_remove_button"
         )
+
     def validId(self):
         """
         Work:
@@ -33,22 +35,21 @@ class RemoveBook:
 
         """
         id = self.remove_book_object["lineEdit_remove_book_id"].text()
-        if  (len(id) == 0 or not id.isnumeric()):
+        if (len(id) == 0 or not id.isnumeric()):
             return False
         db = Database()
-        status = db.getData('books','book_id', id)
+        status = db.getData('books', 'book_id', id)
         if status == None:
             return False
         else:
             # removing the book form the table
-            db.deleteData('books','book_id',id)
+            db.deleteData('books', 'book_id', id)
             return status
 
     def removeButtonAction(self):
         status = self.validId()
         if not status:
-          self.remove_book_object["textBrowser_remove_book_status"].setPlainText("Invalid id")
+            self.remove_book_object["textBrowser_remove_book_status"].setPlainText("Invalid id")
         else:
-          self.remove_book_object["textBrowser_remove_book_status"].setPlainText(
-              f'Book Removed:\n{status[0]}\t{status[1]}\t{status[2]}')
-
+            self.remove_book_object["textBrowser_remove_book_status"].setPlainText(
+                f'Book Removed:\n{status[0]}\t{status[1]}\t{status[2]}')
