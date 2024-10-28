@@ -139,7 +139,7 @@ class Database:
         except Exception as e:
             return str(e)
 
-    def deleteData(self, table_name: str, libraryid: str):
+    def deleteData(self, table_name: str, column_name: str, value: str):
         """ delete data from a table by targetting library id
         Args:
             table_name (str): name of the table from where data will be removed
@@ -150,8 +150,10 @@ class Database:
         """
         try:
             cursor = self.conn.cursor()
-            query =  f"DELETE FROM {table_name} WHERE libraryid = %s"
-            cursor.execute(query, libraryid)
+
+            query = f"DELETE FROM {table_name} WHERE {column_name} = %s"
+            cursor.execute(query, (value,))
+
             self.conn.commit()
             return True
         except Exception as e:
